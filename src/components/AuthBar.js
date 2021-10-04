@@ -7,6 +7,11 @@ import { Box, Flex, Heading, Button } from "@chakra-ui/react";
 import logo1 from '../assets/logo.png'
 import logo2 from '../assets/logo2.png'
 
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
+
 export const AuthBar = (props) =>{
     
     const {
@@ -17,9 +22,36 @@ export const AuthBar = (props) =>{
         screenSize, 
         user
     } = props;
-    
+
+
+    async function authentication () {
+        console.log("pressed")
+    // ---------------------------------------------------
+        const providerOptions = {
+            walletconnect: {
+                package: WalletConnectProvider, // required
+                options: {
+                    infuraId: "62ff589de1564eb3a939f59d4a54ff81" // required
+                }
+                }
+        };
+        
+        const web3Modal = new Web3Modal({
+        network: "mainnet", // optional
+        cacheProvider: true, // optional
+        providerOptions // required
+        });
+        
+        const provider = await web3Modal.connect();
+        
+        const web3 = new Web3(provider);
+    // ------------------------------------------------------  
+    }
+
+
     function walletConnect()
     {
+
         if (!isAuthenticated && screenSize.width < 860)
         {
             return (
@@ -54,7 +86,7 @@ export const AuthBar = (props) =>{
                     bg="linear-gradient(to right, #2b56f5 0%, #8224e3 100%);" 
                     loadingText="Connecting" 
                     variant="outline" 
-                    onClick={ () => authenticate() }>
+                    onClick={ () => authentication() }>
                         Connect Wallet
                 </Button>
             );
