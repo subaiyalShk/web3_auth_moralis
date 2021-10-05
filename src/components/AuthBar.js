@@ -10,6 +10,13 @@ import logo2 from '../assets/logo2.png'
 import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import { Moralis } from "moralis";
+
+const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
+
+Moralis.initialize(appId);
+Moralis.serverURL = serverUrl;
 
 
 export const AuthBar = (props) =>{
@@ -33,7 +40,7 @@ export const AuthBar = (props) =>{
                 options: {
                     infuraId: "62ff589de1564eb3a939f59d4a54ff81" // required
                 }
-                }
+            }
         };
         
         const web3Modal = new Web3Modal({
@@ -44,7 +51,9 @@ export const AuthBar = (props) =>{
         
         const provider = await web3Modal.connect();
         
-        const web3 = new Web3(provider);
+        // const web3 = new Web3(provider);
+
+        // Moralis.enable(web3);
     // ------------------------------------------------------  
     }
 

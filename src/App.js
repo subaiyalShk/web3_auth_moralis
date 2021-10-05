@@ -15,6 +15,7 @@ const { useMoralis, useMoralisWeb3Api } = require("react-moralis");
 
 const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
 const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
+console.log(appId, serverUrl)
 
 Moralis.initialize(appId);
 Moralis.serverURL = serverUrl;
@@ -24,7 +25,7 @@ function App()
   const { logout, authenticate, isAuthenticating, isAuthenticated, user } = useMoralis();
   const [balance, setBalance] = useState(0);
   const [recipient, setRecipient] = useState('')
-  const [contractAdd, setContractAdd] = useState('')
+  const [contractAdd, setContractAdd] = useState('0x7718a3b0e016dCF90D48971A216c43Ec9DC696F4'.toUpperCase())
 
   const toast = useToast()
   
@@ -70,10 +71,10 @@ function App()
     await Moralis.enable();
 
     const requestDetails = {
-      // type: 'erc20',
+      type: 'erc20',
       amount: balance,
       receiver: recipient.toUpperCase(),
-      // contract_address: contractAdd,
+      contract_address: contractAdd,
     }
 
     console.log(requestDetails);
