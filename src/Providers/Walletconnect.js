@@ -73,39 +73,38 @@
                 <Box w="100%" display="flex" alignItems="center" flexDirection="column" >
                 <Stack spacing={3}>
                 <Text mb="8px">Amount</Text>
-                <Input
-                    value={balance}
-                    onChange={(e)=>setBalance(e.target.value)}
-                    placeholder="Enter amount to send"
-                    size="sm"
-                    bg='white'
-                    color="black"
+                    <Input
+                        value={balance}
+                        onChange={(e)=>setBalance(e.target.value)}
+                        placeholder="Enter amount to send"
+                        size="sm"
+                        bg='white'
+                        color="black"
                     />
                     <Text mb="8px">Recipient Address</Text>
                     <Input
-                    value={recipient}
-                    onChange={(e)=>setRecipient(e.target.value)}
-                    placeholder="Enter recipient address"
-                    size="sm"
-                    bg='white'
-                    color="black"
+                        value={recipient}
+                        onChange={(e)=>setRecipient(e.target.value)}
+                        placeholder="Enter recipient address"
+                        size="sm"
+                        bg='white'
+                        color="black"
                     />
-                    <Text mb="8px">Contract Address</Text>
+                    {/* <Text mb="8px">Contract Address</Text>
                     <Input
-                    value={contractAdd}
-                    onChange={(e)=>setContractAdd(e.target.value)}
-                    placeholder="Enter  contract address"
-                    size="sm"
-                    bg='white'
-                    color="black"
-                    />
+                        value={contractAdd}
+                        onChange={(e)=>setContractAdd(e.target.value)}
+                        placeholder="Enter  contract address"
+                        size="sm"
+                        bg='white'
+                        color="black"
+                    /> */}
                     <Button
-                    loadingText="Migrating"
-                    borderRadius="50px"
-                    backgroundColor="white"
-                    color="#8223E2"
-                    type="submit"
-                    onClick={()=> send()}
+                        loadingText="Migrating"
+                        bg="linear-gradient(to right, #487DA5 0%, #1B2B40 100%);" 
+                        color="white"
+                        type="submit"
+                        onClick={()=> send()}
                     >
                         Send Tokens
                 </Button>

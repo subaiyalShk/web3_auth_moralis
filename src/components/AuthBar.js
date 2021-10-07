@@ -92,7 +92,7 @@ export const AuthBar = (props) =>{
         {
             return (
                 <Button 
-                    bg="linear-gradient(to right, #2b56f5 0%, #8224e3 100%);" 
+                    bg="linear-gradient(to right, #487DA5 0%, #1B2B40 100%);" 
                     loadingText="Connecting" 
                     variant="outline" 
                     onClick={ () => authentication() }>

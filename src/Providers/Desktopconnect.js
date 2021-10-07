@@ -89,7 +89,7 @@
                     bg='white'
                     color="black"
                     />
-                    <Text mb="8px">Contract Address</Text>
+                    {/* <Text mb="8px">Contract Address</Text>
                     <Input
                     value={contractAdd}
                     onChange={(e)=>setContractAdd(e.target.value)}
@@ -97,17 +97,17 @@
                     size="sm"
                     bg='white'
                     color="black"
-                    />
+                    /> */}
                     <Button
                     loadingText="Migrating"
-                    borderRadius="50px"
+                    // borderRadius="50px"
                     backgroundColor="white"
                     color="#8223E2"
                     type="submit"
                     onClick={()=> send()}
                     >
                         Send Tokens
-                </Button>
+                    </Button>
                 </Stack>
                 </Box>
             </Center> 
