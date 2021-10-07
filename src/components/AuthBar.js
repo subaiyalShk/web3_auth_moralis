@@ -103,7 +103,7 @@ export const AuthBar = (props) =>{
 
         return(
             <Button 
-                bg="linear-gradient(to right, #2b56f5 0%, #8224e3 100%);" 
+                bg="linear-gradient(to right, #487DA5 0%, #1B2B40 100%);" 
                 loadingText="Disconnecting"
                 type="submit" 
                 onClick={ () => logout() } 
@@ -162,14 +162,15 @@ export const AuthBar = (props) =>{
         return(
             <Flex m={3} w="100%" alignItems="center" justifyContent="space-between" >
                  <Box 
-                    width="138px" 
-                    height="40px" 
+                    width="78px" 
+                    height="60px" 
                 >
                     <img
                         alt='logo' 
                         src={logo2} 
-                        width="138px" 
-                        height="40px" 
+                        width="78px" 
+                        height="20px" 
+                        top="-10px"
                     />
                 </Box>
 
@@ -184,7 +185,7 @@ export const AuthBar = (props) =>{
     const style = {
         'display':'flex',
         'justifyContent': 'space-between',
-        'backgroundColor':'black',
+        'backgroundColor':'#1F344B',
         'height':'85px',
         'paddingLeft':'20px',
         'paddingRight':'20px'

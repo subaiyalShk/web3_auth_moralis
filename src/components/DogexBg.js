@@ -3,8 +3,8 @@
  */
 
 import React from 'react'
-import BgDesktop from '../assets/dogexbgD.png'
-import BgMobile from '../assets/dogexbgm.png'
+import BgDesktop from '../assets/dogexbgD.jpg'
+import BgMobile from '../assets/dogexbgm.jpg'
 
 export const DogexBg = (props) =>{
     const { screenSize } = props;
