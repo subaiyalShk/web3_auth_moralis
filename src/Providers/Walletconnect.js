@@ -42,11 +42,15 @@
         }
         enableit()
     },[]);
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          window.localStorage.removeItem("WALLETCONNECT_DEEPLINK_CHOICE");
+        }
+    });
  
    const send = async () =>{
- 
-     await Moralis.enable({provider: 'walletconnect'});
- 
+
      const requestDetails = {
        amount: balance,
        receiver: recipient.toUpperCase(),
@@ -101,6 +105,7 @@
                     /> */}
                     <Button
                         loadingText="Migrating"
+                        // borderRadius="50px"
                         bg="linear-gradient(to right, #487DA5 0%, #1B2B40 100%);" 
                         color="white"
                         type="submit"
